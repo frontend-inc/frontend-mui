@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -7,7 +8,7 @@ var react_1 = __importDefault(require("react"));
 var button_1 = require("../../../shadcn/ui/button");
 var __1 = require("../..");
 var frontend_shopify_1 = require("frontend-shopify");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var lucide_react_1 = require("lucide-react");
 var hooks_1 = require("../../../hooks");
 var MenuItem = function (props) {
@@ -41,7 +42,7 @@ var MENU_ITEMS = [
 ];
 var ShopifyCustomerAccount = function (props) {
     var _a = props || {}, loginUrl = _a.loginUrl, _b = _a.title, title = _b === void 0 ? 'My Account' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Manage your account' : _c;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var customer = (0, frontend_shopify_1.useAuth)().customer;
     var handleLogin = function () {

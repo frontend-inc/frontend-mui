@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -63,11 +64,11 @@ var react_1 = __importStar(require("react"));
 var tailwind_1 = require("../../../tailwind");
 var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var __1 = require("../..");
 var AuthButton = function (props) {
     var _a = props || {}, _b = _a.showLabel, showLabel = _b === void 0 ? false : _b, _c = _a.showIcon, showIcon = _c === void 0 ? true : _c;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var _d = (0, frontend_js_1.useAuth)(), logout = _d.logout, fetchMe = _d.fetchMe, currentUser = _d.currentUser;
     var _e = (0, hooks_1.useMenu)(), open = _e.open, anchorEl = _e.anchorEl, closeMenu = _e.closeMenu, toggleMenu = _e.toggleMenu;
     var _f = (0, hooks_1.useApp)(), clientUrl = _f.clientUrl, setAuthOpen = _f.setAuthOpen, setMyAccountOpen = _f.setMyAccountOpen;

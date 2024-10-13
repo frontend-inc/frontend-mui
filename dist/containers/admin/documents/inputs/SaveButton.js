@@ -9,13 +9,13 @@ var button_1 = require("../../../../shadcn/ui/button");
 var dropdown_menu_1 = require("../../../../shadcn/ui/dropdown-menu");
 var lucide_react_1 = require("lucide-react");
 var utils_1 = require("../../../../shadcn/lib/utils");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var hooks_1 = require("../../../../hooks");
 var SaveButton = function (_a) {
     var loading = _a.loading, document = _a.document, handleSubmit = _a.handleSubmit, _b = _a.fullWidth, fullWidth = _b === void 0 ? false : _b;
     var clientUrl = (0, hooks_1.useAdmin)().clientUrl;
-    var router = (0, router_1.useRouter)();
-    var _c = router === null || router === void 0 ? void 0 : router.query, appId = _c.app_id, collectionId = _c.collection_id;
+    var router = (0, navigation_1.useRouter)();
+    var _c = (0, navigation_1.useParams)(), appId = _c.app_id, collectionId = _c.collection_id;
     var handleSave = function () {
         handleSubmit();
         router.push("".concat(clientUrl, "/collections/").concat(collectionId));

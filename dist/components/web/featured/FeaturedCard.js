@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -7,11 +8,11 @@ var react_1 = __importDefault(require("react"));
 var hooks_1 = require("../../../hooks");
 var tailwind_1 = require("../../../tailwind");
 var __1 = require("../..");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var FeaturedCard = function (props) {
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var _a = props || {}, label = _a.label, title = _a.title, description = _a.description, _b = _a.image, image = _b === void 0 ? '' : _b, href = _a.href, buttonText = _a.buttonText, _c = _a.flexDirection, flexDirection = _c === void 0 ? 'row' : _c, handleClick = _a.handleClick, _d = _a.objectFit, objectFit = _d === void 0 ? 'cover' : _d, _e = _a.enableOverlay, enableOverlay = _e === void 0 ? false : _e, _f = _a.enableBorder, enableBorder = _f === void 0 ? false : _f, _g = _a.enableGradient, enableGradient = _g === void 0 ? false : _g;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var handleItemClick = function () {
         if (handleClick) {
             return handleClick();

@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -29,11 +30,11 @@ var scroll_area_1 = require("../../../shadcn/ui/scroll-area");
 var shopify_1 = require("../../../components/shopify");
 var frontend_shopify_1 = require("frontend-shopify");
 var lucide_react_1 = require("lucide-react");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var utils_1 = require("../../../shadcn/lib/utils");
 var ShopifyOrderDetails = function (props) {
     var _a, _b;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var order = props.order, supportUrl = props.supportUrl, className = props.className;
     var _c = (0, react_1.useState)(), lineItems = _c[0], setListItems = _c[1];
     var handleOrderStatusClick = function () {

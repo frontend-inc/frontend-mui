@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -53,11 +54,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var frontend_js_1 = require("frontend-js");
 var hooks_1 = require("../../../hooks");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var __1 = require("../..");
 var utils_1 = require("../../../shadcn/lib/utils");
 var DataTableList = function (props) {
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var _a = (0, frontend_js_1.useResourceContext)(), loading = _a.loading, resources = _a.resources, findMany = _a.findMany, paginate = _a.paginate, query = _a.query, page = _a.page, perPage = _a.perPage, numPages = _a.numPages, totalCount = _a.totalCount, selectAll = _a.selectAll;
     var _b = props || {}, headers = _b.headers, href = _b.href, _c = _b.enableShow, enableShow = _c === void 0 ? false : _c;

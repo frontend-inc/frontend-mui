@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -32,13 +33,10 @@ var tailwind_1 = require("../../../tailwind");
 var lucide_react_1 = require("lucide-react");
 var button_1 = require("../../../shadcn/ui/button");
 var tailwind_2 = require("../../../tailwind");
-var popover_1 = require("../../../shadcn/ui/popover");
-var lucide_react_2 = require("lucide-react");
-var TableFilterForm_1 = __importDefault(require("./filters/TableFilterForm"));
+var TableFilterButton_1 = __importDefault(require("./filters/TableFilterButton"));
 var TableToolbar = function (props) {
     var loading = props.loading, selected = props.selected, query = props.query, _a = props.enableDelete, enableDelete = _a === void 0 ? false : _a, _b = props.enableEdit, enableEdit = _b === void 0 ? false : _b, handleKeywordChange = props.handleKeywordChange, handleKeywordSearch = props.handleKeywordSearch, handleFilter = props.handleFilter, handleEdit = props.handleEdit, handleDelete = props.handleDelete, handlePublish = props.handlePublish, handleUnpublish = props.handleUnpublish, handleClearQuery = props.handleClearQuery, secondaryActions = props.secondaryActions, fields = props.fields, handleSearch = props.handleSearch, handleChange = props.handleChange, handleClearFilters = props.handleClearFilters;
-    var _c = (0, react_1.useState)(false), isOpen = _c[0], setIsOpen = _c[1];
-    var _d = (0, react_1.useState)(0), badgeCount = _d[0], setBadgeCount = _d[1];
+    var _c = (0, react_1.useState)(0), badgeCount = _c[0], setBadgeCount = _c[1];
     (0, react_1.useEffect)(function () {
         var _a;
         if (query === null || query === void 0 ? void 0 : query.filters) {
@@ -52,16 +50,8 @@ var TableToolbar = function (props) {
         react_1.default.createElement("div", { className: "flex flex-row justify-start items-center w-full gap-2.5" },
             react_1.default.createElement("div", null,
                 react_1.default.createElement(components_1.SearchInput, { value: query === null || query === void 0 ? void 0 : query.keywords, handleChange: handleKeywordChange, handleSearch: handleKeywordSearch })),
-            react_1.default.createElement(tailwind_1.Hidden, { mdDown: true },
-                react_1.default.createElement("div", { className: "relative flex flex-row justify-start items-center" },
-                    react_1.default.createElement(popover_1.Popover, { open: isOpen, onOpenChange: setIsOpen },
-                        badgeCount > 0 && (react_1.default.createElement(tailwind_2.Badge, { className: "absolute -top-2 -right-2 z-10" }, badgeCount)),
-                        react_1.default.createElement(popover_1.PopoverTrigger, { asChild: true },
-                            react_1.default.createElement(button_1.Button, { className: "text-primary-foreground", color: "secondary" },
-                                react_1.default.createElement(lucide_react_2.ListFilter, { className: "mr-2 h-4 w-4" }),
-                                "Filter")),
-                        react_1.default.createElement(popover_1.PopoverContent, { className: "w-[400px]" },
-                            react_1.default.createElement(TableFilterForm_1.default, { loading: loading, query: query, fields: fields, handleSearch: handleSearch, handleChange: handleChange, handleClearFilters: handleClearFilters })))))),
+            react_1.default.createElement("div", { className: "relative flex flex-row justify-start items-center" },
+                react_1.default.createElement(TableFilterButton_1.default, { badgeCount: badgeCount, loading: loading, query: query, fields: fields, handleChange: handleChange, handleSearch: handleSearch, handleClear: handleClearFilters }))),
         react_1.default.createElement("div", { className: "w-60 flex flex-row justify-end items-center" },
             react_1.default.createElement("div", { className: "flex flex-row justify-start items-center" },
                 react_1.default.createElement(tailwind_1.Hidden, { mdDown: true },

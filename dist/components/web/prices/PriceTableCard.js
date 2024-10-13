@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -25,11 +26,11 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var tailwind_1 = require("../../../tailwind");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var __1 = require("../..");
 var context_1 = require("../../../context");
 var PriceCard = function (props) {
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var setAuthOpen = (0, react_1.useContext)(context_1.AppContext).setAuthOpen;
     var label = props.label, title = props.title, description = props.description, features = props.features, buttonText = props.buttonText, price = props.price, url = props.url;
     var handleClick = function () {

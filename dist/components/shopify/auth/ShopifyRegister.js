@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -43,11 +44,11 @@ var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var __2 = require("..");
 var frontend_shopify_1 = require("frontend-shopify");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var ShopifyRegister = function (props) {
     var _a = props.title, title = _a === void 0 ? 'Sign up' : _a, _b = props.subtitle, subtitle = _b === void 0 ? 'Register your account' : _b, redirectUrl = props.redirectUrl, loginUrl = props.loginUrl;
     var _c = (0, frontend_shopify_1.useAuth)(), loading = _c.loading, errors = _c.errors, customer = _c.customer, handleChange = _c.handleChange, signup = _c.signup;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {

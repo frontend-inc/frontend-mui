@@ -19,4 +19,4 @@ export type ResourceListItemProps = {
     isDragging?: boolean;
     enableBorder?: boolean;
 };
-export default function ResourceListItem({ icon, avatar, color, primary, secondary, image, handleClick, handleEdit, handleDelete, handleSelect, secondaryAction, menuActions, sortable, selectable, selected, isDragging, enableBorder, }: ResourceListItemProps): React.JSX.Element;
+export default function ResourceListItem({ icon, avatar, color, primary, secondary, image, handleClick, handleEdit, handleDelete, handleSelect, secondaryAction, menuActions, sortable, selectable, selected, enableBorder, }: ResourceListItemProps): React.JSX.Element;

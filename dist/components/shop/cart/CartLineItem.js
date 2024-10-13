@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -43,7 +44,7 @@ var react_1 = __importDefault(require("react"));
 var hooks_1 = require("../../../hooks");
 var components_1 = require("../../../components");
 var tailwind_1 = require("../../../tailwind");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var button_1 = require("../../../shadcn/ui/button");
 var utils_1 = require("../../../shadcn/lib/utils");
 var lucide_react_1 = require("lucide-react");
@@ -59,7 +60,7 @@ var CartQuantityInput = function (props) {
 var CartLineItem = function (props) {
     var _a;
     var lineItem = props.lineItem;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var _b = (0, hooks_1.useCart)(), loading = _b.loading, addQuantity = _b.addQuantity, removeQuantity = _b.removeQuantity, removeFromCart = _b.removeFromCart;
     var setCartOpen = (0, hooks_1.useCart)().setCartOpen;

@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var frontend_js_1 = require("frontend-js");

@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -26,12 +27,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var frontend_shopify_1 = require("frontend-shopify");
 var AdminShopifyPage = function (props) {
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var clientUrl = (0, hooks_1.useAdmin)().clientUrl;
-    var appId = router.query.app_id;
+    var appId = (0, navigation_1.useParams)().app_id;
     var _a = (0, hooks_1.useApps)(), loading = _a.loading, app = _a.app, findApp = _a.findApp;
     var _b = props || {}, title = _b.title, actions = _b.actions, activeTab = _b.activeTab, activeMenu = _b.activeMenu, menuItems = _b.menuItems, enableEdit = _b.enableEdit, enableDelete = _b.enableDelete, handleEdit = _b.handleEdit, handleDelete = _b.handleDelete, _c = _b.disablePadding, disablePadding = _c === void 0 ? false : _c, children = _b.children;
     (0, hooks_1.useTabs)(activeTab);

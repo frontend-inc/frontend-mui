@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -26,11 +27,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
 var __1 = require("..");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var hooks_1 = require("../../../hooks");
 var ProductArray = function (_a) {
     var href = _a.href, handles = _a.handles, _b = _a.enableBorder, enableBorder = _b === void 0 ? false : _b, _c = _a.enableAddToCart, enableAddToCart = _c === void 0 ? false : _c, _d = _a.enableQuickShop, enableQuickShop = _d === void 0 ? false : _d, _e = _a.enableQuantity, enableQuantity = _e === void 0 ? false : _e, _f = _a.enableOkendoStarRating, enableOkendoStarRating = _f === void 0 ? false : _f, buttonText = _a.buttonText;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var handleClick = function (product) {
         if (href) {

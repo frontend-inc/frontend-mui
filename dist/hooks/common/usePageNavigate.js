@@ -1,10 +1,11 @@
+'use client';
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var hooks_1 = require("../../hooks");
 var usePageNavigate = function (props) {
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var navigate = function (item, page) {
         var _a = item || {}, handle = _a.handle, baseUrl = _a.baseUrl;
         var pageHandle = (page || {}).handle;

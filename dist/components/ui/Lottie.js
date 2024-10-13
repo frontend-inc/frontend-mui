@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -63,6 +64,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
+'use client';
 var react_lottie_player_1 = __importDefault(require("react-lottie-player"));
 var Lottie = function (props) {
     var src = props.src, _a = props.loop, loop = _a === void 0 ? true : _a;

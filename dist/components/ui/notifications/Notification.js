@@ -6,12 +6,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var utils_1 = require("../../../shadcn/lib/utils");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var hooks_1 = require("../../../hooks");
 var hooks_2 = require("../../../hooks");
 function Notification(_a) {
     var notification = _a.notification;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var clientUrl = (0, hooks_2.useApp)().clientUrl;
     var _b = notification || {}, text = _b.text, path = _b.path, url = _b.url, notification_type = _b.notification_type;
     var handleClick = function () {

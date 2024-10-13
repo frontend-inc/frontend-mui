@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -5,13 +6,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("..");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var addons_1 = require("../../../hooks/addons");
 var hooks_1 = require("../../../hooks");
 var ShopifyProducts = function (_a) {
     var _b = _a.href, href = _b === void 0 ? '/products' : _b, products = _a.products, _c = _a.buttonText, buttonText = _c === void 0 ? 'Add to cart' : _c, _d = _a.enableBorder, enableBorder = _d === void 0 ? false : _d, enableAddToCart = _a.enableAddToCart, enableQuickShop = _a.enableQuickShop, enableQuantity = _a.enableQuantity, enableOkendoStarRating = _a.enableOkendoStarRating;
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var trackProductClicked = (0, addons_1.useSegment)().trackProductClicked;
     var handleClick = function (product) {
         if (href) {

@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -12,9 +13,9 @@ var AdminProductCollectionEdit_1 = __importDefault(require("./AdminProductCollec
 var AdminProductCollectionShow_1 = __importDefault(require("./AdminProductCollectionShow"));
 var AdminProductCollectionToolbar_1 = __importDefault(require("./AdminProductCollectionToolbar"));
 var AdminProductCollectionHeader_1 = __importDefault(require("./AdminProductCollectionHeader"));
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var AdminProductCollectionsList = function () {
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var clientUrl = (0, hooks_1.useAdmin)().clientUrl;
     var apiUrl = (0, hooks_1.useAdmin)().apiUrl;
     var handleClick = function (productCollection) {

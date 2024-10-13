@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -71,7 +72,7 @@ var image_1 = __importDefault(require("next/image"));
 var tailwind_1 = require("../../../tailwind");
 var components_1 = require("../../../components");
 var frontend_shopify_3 = require("frontend-shopify");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var utils_1 = require("../../../shadcn/lib/utils");
 var ShopifyCartQuantityInput = function (_a) {
     var quantity = _a.quantity, handleAddQuantity = _a.handleAddQuantity, handleRemoveQuantity = _a.handleRemoveQuantity;
@@ -85,7 +86,7 @@ var ShopifyCartQuantityInput = function (_a) {
 var ShopifyCartLine = function (_a) {
     var _b, _c, _d, _e, _f, _g, _h, _j;
     var line = _a.line;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var trackRemoveFromCart = (0, addons_1.useSegment)().trackRemoveFromCart;
     var _k = (0, frontend_shopify_2.useCart)(), loading = _k.loading, cartLineRemove = _k.cartLineRemove, cartLineUpdate = _k.cartLineUpdate;
     var _l = (0, react_1.useContext)(frontend_shopify_1.ShopifyContext), shopUrl = _l.shopUrl, setCartOpen = _l.setCartOpen;

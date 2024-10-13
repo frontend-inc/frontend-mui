@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -43,11 +44,11 @@ var react_1 = __importDefault(require("react"));
 var components_1 = require("../../../components");
 var hooks_1 = require("../../../hooks");
 var frontend_js_1 = require("frontend-js");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var Signup = function (props) {
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var href = props.href, loginUrl = props.loginUrl, _a = props.title, title = _a === void 0 ? 'Sign Up' : _a, _b = props.subtitle, subtitle = _b === void 0 ? 'Register your account' : _b, _c = props.enableGoogle, enableGoogle = _c === void 0 ? false : _c;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var _d = (0, frontend_js_1.useAuth)(), loading = _d.loading, errors = _d.errors, user = _d.user, handleChange = _d.handleChange, signup = _d.signup;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;

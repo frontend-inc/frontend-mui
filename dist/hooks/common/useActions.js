@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -40,7 +41,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var __1 = require("..");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var _1 = require(".");
 var copy_to_clipboard_1 = __importDefault(require("copy-to-clipboard"));
 var __2 = require("..");
@@ -50,7 +51,7 @@ var useButtons = function (params) {
     var _b = (0, _1.useLoadingWrapper)(), loading = _b.loading, data = _b.data, errors = _b.errors, loadingWrapper = _b.loadingWrapper;
     var showAlertSuccess = (0, __2.useAlerts)().showAlertSuccess;
     var api = (0, frontend_js_1.useApi)().api;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var clientUrl = (0, __1.useApp)().clientUrl;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var handleClick = function (ev) { return __awaiter(void 0, void 0, void 0, function () {

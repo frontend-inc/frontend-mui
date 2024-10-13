@@ -1,10 +1,13 @@
 import React from 'react';
-type TableFilterButtonProps = {
+import { SyntheticEventType } from '../../../../types';
+type FilterButtonProps = {
     loading: boolean;
     query: any;
-    handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
-    badgeCount: number;
-    handleClearFilters: () => void;
+    fields: any[];
+    badgeCount?: number;
+    handleChange: (ev: SyntheticEventType) => void;
+    handleSearch: (query: any) => void;
+    handleClear: () => void;
 };
-export default function TableFilterButton(props: TableFilterButtonProps): React.JSX.Element;
-export {};
+declare const FilterButtonInput: React.FC<FilterButtonProps>;
+export default FilterButtonInput;

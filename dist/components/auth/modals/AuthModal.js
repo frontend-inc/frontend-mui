@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -73,12 +74,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var hooks_1 = require("../../../hooks");
 var AuthModal = function (props) {
     var _a = props.disableUsername, disableUsername = _a === void 0 ? false : _a, enableGoogle = props.enableGoogle, handleSuccess = props.handleSuccess;
-    var router = (0, router_1.useRouter)();
-    var appId = router.query.app_id;
+    var router = (0, navigation_1.useRouter)();
+    var appId = (0, navigation_1.useParams)().app_id;
     var _b = (0, hooks_1.useApp)(), authOpen = _b.authOpen, setAuthOpen = _b.setAuthOpen;
     var _c = (0, frontend_js_1.useAuth)(), errors = _c.errors, loading = _c.loading, user = _c.user, updateMe = _c.updateMe, handleChange = _c.handleChange, login = _c.login, signup = _c.signup, verifyPin = _c.verifyPin, sendPin = _c.sendPin;
     var _d = (0, react_1.useState)(1), tab = _d[0], setTab = _d[1];

@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -65,10 +66,10 @@ var tailwind_1 = require("../../../tailwind");
 var frontend_shopify_1 = require("frontend-shopify");
 var __2 = require("..");
 var hooks_1 = require("../../../hooks");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var Address = function (props) {
-    var router = (0, router_1.useRouter)();
-    var addressId = (router === null || router === void 0 ? void 0 : router.query).address_id;
+    var router = (0, navigation_1.useRouter)();
+    var addressId = (0, navigation_1.useParams)().address_id;
     if (addressId == 'new') {
         addressId = null;
     }

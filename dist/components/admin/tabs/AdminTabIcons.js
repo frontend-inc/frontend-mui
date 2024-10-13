@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -33,11 +34,11 @@ var separator_1 = require("../../../shadcn/ui/separator");
 var AdminAuthButton_1 = __importDefault(require("./AdminAuthButton"));
 var AdminTabIcon_1 = __importDefault(require("./AdminTabIcon"));
 var image_1 = __importDefault(require("next/image"));
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 function AdminTabIcons(_a) {
     var logo = _a.logo, menuItems = _a.menuItems, handleClick = _a.handleClick, secondaryAction = _a.secondaryAction;
     var activeTab = (0, react_1.useContext)(context_1.AdminContext).activeTab;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var handleHomeClick = function () {
         router.push('/dashboard');
     };

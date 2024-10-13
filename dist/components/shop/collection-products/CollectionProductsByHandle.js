@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -27,10 +28,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var CollectionProductsByHandle = function (props) {
-    var router = (0, router_1.useRouter)();
-    var handle = router.query.handle;
+    var router = (0, navigation_1.useRouter)();
+    var handle = (0, navigation_1.useParams)().handle;
     var _a = props.query, query = _a === void 0 ? {} : _a, rest = __rest(props, ["query"]);
     query = __assign(__assign({}, query), { method: 'collection_products', product_collection_id: handle });
     return react_1.default.createElement(__1.ProductList, __assign({ query: query }, rest));

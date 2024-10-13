@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -42,12 +43,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var hooks_1 = require("../../../hooks");
 var Login = function (props) {
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var _a = props || {}, href = _a.href, _b = _a.title, title = _b === void 0 ? 'Sign In' : _b, _c = _a.subtitle, subtitle = _c === void 0 ? 'Log in to your account' : _c, forgotPasswordUrl = _a.forgotPasswordUrl, signupUrl = _a.signupUrl, oneTimePasswordUrl = _a.oneTimePasswordUrl, _d = _a.enableGoogle, enableGoogle = _d === void 0 ? false : _d;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var _e = (0, frontend_js_1.useAuth)(), errors = _e.errors, loading = _e.loading, user = _e.user, handleChange = _e.handleChange, login = _e.login;
     var handleSubmit = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;

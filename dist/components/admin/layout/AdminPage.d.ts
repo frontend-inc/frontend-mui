@@ -8,8 +8,8 @@ export type AdminPageProps = {
     menuItems?: AdminMenusType;
     enableEdit?: boolean;
     enableDelete?: boolean;
-    handleEdit?: (menuItem: AdminMenuType) => void;
-    handleDelete?: (menuItem: AdminMenuType) => void;
+    handleEdit: (menuItem: AdminMenuType) => void;
+    handleDelete: (menuItem: AdminMenuType) => void;
     disablePadding?: boolean;
     leftPanel?: React.FC;
     children: React.ReactNode;

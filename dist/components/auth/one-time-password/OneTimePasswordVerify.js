@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -62,10 +63,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var OneTimePasswordVerify = function (props) {
-    var router = (0, router_1.useRouter)();
-    var oneTimePassword = router.query.token;
+    var router = (0, navigation_1.useRouter)();
+    var oneTimePassword = (0, navigation_1.useParams)().token;
     var _a = (0, react_1.useState)(false), verified = _a[0], setVerified = _a[1];
     var _b = props || {}, redirectUrl = _b.redirectUrl, _c = _b.title, title = _c === void 0 ? 'One-Time Password' : _c, _d = _b.subtitle, subtitle = _d === void 0 ? 'Get a one-time password link' : _d, loginUrl = _b.loginUrl;
     var _e = (0, frontend_js_1.useAuth)(), errors = _e.errors, loading = _e.loading, verifyOneTimePassword = _e.verifyOneTimePassword;

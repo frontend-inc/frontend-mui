@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -90,15 +91,15 @@ var components_2 = require("../../../components");
 var components_3 = require("../../../components");
 var components_4 = require("../../../components");
 var AdminToolbarMenu_1 = __importDefault(require("./AdminToolbarMenu"));
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var copy_to_clipboard_1 = __importDefault(require("copy-to-clipboard"));
 var constants_1 = require("../../../constants");
 var frontend_js_1 = require("frontend-js");
 var AdminCollectionTable = function (props) {
     var collection = props.collection, handleSaveView = props.handleSaveView;
     var apiQuery = new frontend_js_1.ApiQuery();
-    var router = (0, router_1.useRouter)();
-    var collectionId = (router === null || router === void 0 ? void 0 : router.query).collection_id;
+    var router = (0, navigation_1.useRouter)();
+    var collectionId = (0, navigation_1.useParams)().collection_id;
     var fields = (collection || {}).fields;
     var _a = (0, react_1.useState)([]), selected = _a[0], setSelected = _a[1];
     var _b = (0, react_1.useState)(false), showDeleteModal = _b[0], setShowDeleteModal = _b[1];
@@ -284,7 +285,7 @@ var AdminCollectionTable = function (props) {
     };
     var handleClearFilters = function () {
         setShowFilters(false);
-        var query = __assign(__assign({}, router.query), { filters: {
+        var query = __assign(__assign({}, (0, navigation_1.useParams)()), { filters: {
                 AND: [],
                 OR: [],
             }, keywords: '' });
@@ -292,7 +293,7 @@ var AdminCollectionTable = function (props) {
         router.push("".concat(clientUrl, "/collections/").concat(collection.name, "?").concat(apiQuery.url()));
     };
     var handleSort = function (field) {
-        apiQuery.parseURL(router.query);
+        apiQuery.parseURL((0, navigation_1.useParams)());
         apiQuery.sort(field === null || field === void 0 ? void 0 : field.name);
         router.push("".concat(clientUrl, "/collections/").concat(collection.name, "?").concat(apiQuery.url()));
     };
@@ -315,13 +316,14 @@ var AdminCollectionTable = function (props) {
             handleSetVisibleFields(fields);
         }
     }, [fields]);
+    var searchParams = (0, navigation_1.useSearchParams)();
     (0, react_1.useEffect)(function () {
-        if (router === null || router === void 0 ? void 0 : router.query) {
-            var parsedQuery = apiQuery.parseURL(router.query).query();
+        if (searchParams) {
+            var parsedQuery = apiQuery.parseURL(searchParams).query();
             //@ts-ignore
             findDocuments(parsedQuery);
         }
-    }, [router === null || router === void 0 ? void 0 : router.query]);
+    }, [searchParams]);
     return (react_1.default.createElement("div", null,
         react_1.default.createElement(components_2.Table, { enableSelect: true, enableEdit: true, enableDelete: true, loading: documents && delayedLoading, 
             //@ts-ignore

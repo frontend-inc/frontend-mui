@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -65,7 +66,7 @@ var button_1 = require("../../../shadcn/ui/button");
 var tailwind_1 = require("../../../tailwind");
 var frontend_shopify_2 = require("frontend-shopify");
 var components_1 = require("../../../components");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var DesktopAuthButton = function (props) {
     var handleClick = props.handleClick, icon = props.icon;
     return (react_1.default.createElement(button_1.Button, { variant: "ghost", size: "icon", onClick: handleClick, className: "p-0" },
@@ -81,7 +82,7 @@ var MobileShopifyAuthButton = function (props) {
                 react_1.default.createElement(tailwind_1.Typography, { variant: "button", color: "text.primary" }, "Orders")))));
 };
 var ShopifyAuth = function (props) {
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var _a = props || {}, _b = _a.icon, icon = _b === void 0 ? 'ReceiptText' : _b, _c = _a.variant, variant = _c === void 0 ? 'topNav' : _c;
     var customerPortalUrl = (0, react_1.useContext)(frontend_shopify_1.ShopifyContext).customerPortalUrl;
     var findShop = (0, frontend_shopify_2.useShop)().findShop;

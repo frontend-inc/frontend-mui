@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -78,7 +79,7 @@ var tailwind_1 = require("../../../tailwind");
 var components_1 = require("../../../components");
 var components_2 = require("../../../components");
 var hooks_1 = require("../../../hooks");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var AdminViewEdit_1 = __importDefault(require("../views/AdminViewEdit"));
 var frontend_js_1 = require("frontend-js");
 var AdminCollectionTable_1 = __importDefault(require("./AdminCollectionTable"));
@@ -88,8 +89,8 @@ var lucide_react_1 = require("lucide-react");
 var AdminCollectionPage = function () {
     (0, hooks_1.useTabs)('collections');
     var apiQuery = new frontend_js_1.ApiQuery();
-    var router = (0, router_1.useRouter)();
-    var _a = router === null || router === void 0 ? void 0 : router.query, collectionId = _a.collection_id, appId = _a.app_id;
+    var router = (0, navigation_1.useRouter)();
+    var _a = (0, navigation_1.useParams)(), collectionId = _a.collection_id, appId = _a.app_id;
     if (collectionId == 'index')
         collectionId = '';
     var clientUrl = (0, hooks_1.useAdmin)().clientUrl;
@@ -100,7 +101,7 @@ var AdminCollectionPage = function () {
     var handleSaveView = function () { return __awaiter(void 0, void 0, void 0, function () {
         var viewQuery;
         return __generator(this, function (_a) {
-            viewQuery = apiQuery.parseURL(router.query).query();
+            viewQuery = apiQuery.parseURL((0, navigation_1.useParams)()).query();
             setView({
                 collection_id: collectionId,
                 query: viewQuery,

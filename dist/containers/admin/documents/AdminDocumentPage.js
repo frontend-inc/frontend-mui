@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -80,12 +81,12 @@ var tailwind_1 = require("../../../tailwind");
 var AdminDocumentForm_1 = __importDefault(require("./AdminDocumentForm"));
 var AdminDocumentRightPanel_1 = __importDefault(require("./AdminDocumentRightPanel"));
 var lucide_react_1 = require("lucide-react");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var hooks_1 = require("../../../hooks");
 var helpers_1 = require("../../../helpers");
 var scroll_area_1 = require("../../../shadcn/ui/scroll-area");
 var DocumentEdit = function (props) {
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var appId = props.appId, documentId = props.documentId, collectionId = props.collectionId, enableUsers = props.enableUsers;
     var _a = (0, react_1.useState)(false), saveLoading = _a[0], setSaveLoading = _a[1];
     var _b = (0, react_1.useState)(false), publishLoading = _b[0], setPublishLoading = _b[1];
@@ -260,13 +261,14 @@ var DocumentEdit = function (props) {
             setDocument({});
         }
     }, [documentId]);
+    var searchParams = (0, navigation_1.useSearchParams)();
     (0, react_1.useEffect)(function () {
-        var _a, _b;
-        if (router === null || router === void 0 ? void 0 : router.query) {
+        var _a;
+        if (searchParams) {
             //@ts-ignore
-            setDocumentIds(((_b = (_a = router.query) === null || _a === void 0 ? void 0 : _a.ids) === null || _b === void 0 ? void 0 : _b.split(',')) || []);
+            setDocumentIds(((_a = searchParams === null || searchParams === void 0 ? void 0 : searchParams.ids) === null || _a === void 0 ? void 0 : _a.split(',')) || []);
         }
-    }, [router === null || router === void 0 ? void 0 : router.query]);
+    }, [searchParams]);
     (0, react_1.useEffect)(function () {
         if (collection === null || collection === void 0 ? void 0 : collection.fields) {
             handleSortFields(collection === null || collection === void 0 ? void 0 : collection.fields);

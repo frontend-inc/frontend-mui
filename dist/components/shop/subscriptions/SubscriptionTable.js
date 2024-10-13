@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -67,11 +68,11 @@ var frontend_js_1 = require("frontend-js");
 var __1 = require("../..");
 var SubscriptionTableCard_1 = __importDefault(require("./SubscriptionTableCard"));
 var hooks_1 = require("../../../hooks");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var utils_1 = require("../../../shadcn/lib/utils");
 function SubscriptionTable() {
     var _this = this;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var _a = (0, hooks_1.useSubscriptions)(), loading = _a.delayedLoading, subscribe = _a.subscribe, subscriptions = _a.subscriptions, findSubscriptions = _a.findSubscriptions;
     var currentUser = (0, frontend_js_1.useAuth)().currentUser;
     var setAuthOpen = (0, hooks_1.useApp)().setAuthOpen;

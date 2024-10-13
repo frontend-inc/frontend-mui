@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -36,6 +37,6 @@ function CellHeader(_a) {
     return (react_1.default.createElement(button_1.Button, { variant: "ghost", className: (0, utils_1.cn)('w-full h-11 rounded-none flex justify-between items-center px-2', 'hover:bg-accent hover:text-accent-foreground'), onClick: function () { return handleSort(field); } },
         react_1.default.createElement("span", { className: "font-medium" }, field === null || field === void 0 ? void 0 : field.label),
         active && (react_1.default.createElement("span", { className: (0, utils_1.cn)('transition-transform duration-200', sortDirection === 'desc' && 'rotate-180') },
-            react_1.default.createElement(lucide_react_1.ChevronUp, { className: "h-5 w-5 text-primary" })))));
+            react_1.default.createElement(lucide_react_1.ChevronUp, { className: "h-5 w-5 text-muted-foreground" })))));
 }
 exports.default = CellHeader;

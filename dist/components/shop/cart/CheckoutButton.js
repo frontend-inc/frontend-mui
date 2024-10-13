@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -43,10 +44,10 @@ var react_1 = __importDefault(require("react"));
 var tailwind_1 = require("../../../tailwind");
 var hooks_1 = require("../../../hooks");
 var hooks_2 = require("../../../hooks");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var CheckoutButton = function () {
     var _a = (0, hooks_1.useCart)(), loading = _a.loading, cart = _a.cart, checkout = _a.checkout;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var showAlertError = (0, hooks_2.useAlerts)().showAlertError;
     var handleClick = function () { return __awaiter(void 0, void 0, void 0, function () {
         var currentUrl, resp, url;

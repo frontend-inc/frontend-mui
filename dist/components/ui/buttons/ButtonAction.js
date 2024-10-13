@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -28,10 +29,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var tailwind_1 = require("../../../tailwind");
 var __1 = require("../..");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var ButtonAction = function (props) {
     var children = props.children, icon = props.icon, url = props.url, path = props.path, _a = props.color, color = _a === void 0 ? 'secondary' : _a, _b = props.size, size = _b === void 0 ? 'medium' : _b, rest = __rest(props, ["children", "icon", "url", "path", "color", "size"]);
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var handleClick = function () {
         if (url) {
             window.open(url, '_blank');

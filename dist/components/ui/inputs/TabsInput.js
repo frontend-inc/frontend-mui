@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -13,11 +14,11 @@ function TabsInput(_a) {
         handleChange({
             target: {
                 name: name,
-                value: parseInt(value, 10),
+                value: value
             },
         });
     };
-    return (react_1.default.createElement("div", { className: (0, utils_1.cn)('flex', 'flex-row items-center', 'justify-between w-full space-y-1') },
+    return (react_1.default.createElement("div", { className: 'flex flex-row items-center justify-between w-full space-y-1' },
         react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
         react_1.default.createElement(tabs_1.Tabs, { defaultValue: value.toString(), onValueChange: handleInputChange, className: "rounded-md" },
             react_1.default.createElement(tabs_1.TabsList, { className: (0, utils_1.cn)('w-full') }, options.map(function (option) { return (react_1.default.createElement(tabs_1.TabsTrigger, { key: option.value, value: option.value.toString(), className: (0, utils_1.cn)('flex items-center text-sm') },

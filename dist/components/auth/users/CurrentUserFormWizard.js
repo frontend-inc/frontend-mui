@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -69,10 +70,10 @@ var FormWizardProgress_1 = __importDefault(require("../../cms/forms/wizard/FormW
 var FormWizardField_1 = __importDefault(require("../../cms/forms/wizard/FormWizardField"));
 var FormWizardButtons_1 = __importDefault(require("../../cms/forms/wizard/FormWizardButtons"));
 var __1 = require("../..");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var frontend_js_1 = require("frontend-js");
 var CurrentUserFormWizard = function (props) {
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var _a = props.fields, fields = _a === void 0 ? [] : _a, _b = props.buttonText, buttonText = _b === void 0 ? 'Update Profile' : _b, href = props.href;
     var _c = (0, frontend_js_1.useAuth)(), user = _c.user, setUser = _c.setUser, currentUser = _c.currentUser, updateMe = _c.updateMe, handleChange = _c.handleChange, fetchMe = _c.fetchMe, deleteAvatar = _c.deleteAvatar;

@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -6,11 +7,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var utils_1 = require("../../../shadcn/lib/utils");
 var components_1 = require("../../../components");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var SocialButtons = function (props) {
     var resource = props.resource, product = props.product, _a = props.direction, direction = _a === void 0 ? 'row' : _a, enableComments = props.enableComments, enableLikes = props.enableLikes, enableFavorites = props.enableFavorites, enableSharing = props.enableSharing, enableProductLikes = props.enableProductLikes, enableProductFavorites = props.enableProductFavorites, _b = props.size, size = _b === void 0 ? 'small' : _b, _c = props.justifyContent, justifyContent = _c === void 0 ? 'flex-start' : _c, color = props.color;
-    var router = (0, router_1.useRouter)();
-    var currentPageUrl = router.asPath;
+    var currentPageUrl = (0, navigation_1.usePathname)();
     if (!enableLikes &&
         !enableFavorites &&
         !enableSharing &&

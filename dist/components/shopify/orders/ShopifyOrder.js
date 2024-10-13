@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -30,11 +31,10 @@ var react_1 = __importStar(require("react"));
 var __1 = require("../..");
 var frontend_shopify_1 = require("frontend-shopify");
 var __2 = require("..");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var moment_1 = __importDefault(require("moment"));
 var ShopifyCustomerOrder = function (props) {
-    var router = (0, router_1.useRouter)();
-    var orderId = (router === null || router === void 0 ? void 0 : router.query).order_id;
+    var orderId = (0, navigation_1.useParams)().order_id;
     if (orderId == 'new') {
         orderId = null;
     }

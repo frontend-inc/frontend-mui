@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -18,6 +19,8 @@ function SelectInput(_a) {
             } },
             react_1.default.createElement(select_1.SelectTrigger, { className: "w-full min-w-[165px] h-10 bg-background border border-input shadow-none rounded" },
                 react_1.default.createElement(select_1.SelectValue, { placeholder: "Select an option" })),
-            react_1.default.createElement(select_1.SelectContent, null, options === null || options === void 0 ? void 0 : options.map(function (option, idx) { return (react_1.default.createElement(select_1.SelectItem, { key: idx, value: option.value }, option.label)); })))));
+            react_1.default.createElement(select_1.SelectContent, null, options === null || options === void 0 ? void 0 : options.map(function (option, idx) { return (react_1.default.createElement(select_1.SelectItem, { key: idx, 
+                // @ts-ignore
+                value: option.value }, option.label)); })))));
 }
 exports.default = SelectInput;

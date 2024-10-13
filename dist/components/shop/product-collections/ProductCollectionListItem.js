@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __rest = (this && this.__rest) || function (s, e) {
     var t = {};
@@ -17,12 +18,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var __1 = require("../..");
 var hooks_1 = require("../../../hooks");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var ProductCollectionListItem = function (props) {
     var _a;
     var resource = props.resource, href = props.href, handleClick = props.handleClick, _b = props.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = props.enableOverlay, enableOverlay = _c === void 0 ? false : _c, rest = __rest(props, ["resource", "href", "handleClick", "enableGradient", "enableOverlay"]);
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var handleShowClick = function () {
         if (clientUrl && href && (resource === null || resource === void 0 ? void 0 : resource.handle)) {
             window.scrollTo({

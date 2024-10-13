@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -74,12 +75,12 @@ var react_1 = __importStar(require("react"));
 var tailwind_1 = require("../../../tailwind");
 var __1 = require("../..");
 var frontend_js_1 = require("frontend-js");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var VerifyPin = function (props) {
     var _a = props || {}, title = _a.title, subtitle = _a.subtitle, redirectUrl = _a.redirectUrl, loginUrl = _a.loginUrl;
     var _b = (0, react_1.useState)(false), showVerifyPin = _b[0], setShowVerifyPin = _b[1];
     var _c = (0, frontend_js_1.useAuth)(), loading = _c.loading, errors = _c.errors, user = _c.user, setUser = _c.setUser, handleChange = _c.handleChange, sendPin = _c.sendPin, verifyPin = _c.verifyPin;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var handleSendPin = function () { return __awaiter(void 0, void 0, void 0, function () {
         var resp;
         return __generator(this, function (_a) {

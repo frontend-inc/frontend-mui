@@ -7,7 +7,7 @@ type SelectInputPropsType = {
     value: string;
     placeholder?: string;
     options?: {
-        value: string;
+        value: string | number | boolean;
         label: string;
     }[];
     handleChange: (e: SyntheticEventType) => void;

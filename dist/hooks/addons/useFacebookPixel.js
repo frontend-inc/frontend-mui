@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -60,14 +61,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var useFacebookPixel = function (props) {
     var facebookPixelId = (props || {}).facebookPixelId;
-    var router = (0, router_1.useRouter)();
     var options = {
         autoConfig: true,
         debug: false,
     };
+    var pathname = (0, navigation_1.usePathname)();
     (0, react_1.useEffect)(function () {
         var trackFbPageView = function () { return __awaiter(void 0, void 0, void 0, function () {
             var ReactPixel;
@@ -86,6 +87,6 @@ var useFacebookPixel = function (props) {
             trackFbPageView();
         }
         return function () { };
-    }, [facebookPixelId, router === null || router === void 0 ? void 0 : router.pathname]);
+    }, [facebookPixelId, pathname]);
 };
 exports.default = useFacebookPixel;

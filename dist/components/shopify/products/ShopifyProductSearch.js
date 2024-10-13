@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -29,7 +30,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importStar(require("react"));
 var frontend_shopify_1 = require("frontend-shopify");
 var addons_1 = require("../../../hooks/addons");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var __1 = require("../..");
 var __2 = require("..");
 var LoadMore_1 = __importDefault(require("../search/LoadMore"));
@@ -38,9 +39,9 @@ var utils_1 = require("../../../shadcn/lib/utils");
 var PER_PAGE = 48;
 var ShopifyProductSearch = function (_a) {
     var href = _a.href, options = _a.options, priceOptions = _a.priceOptions, _b = _a.enableFilters, enableFilters = _b === void 0 ? false : _b, _c = _a.enableSorting, enableSorting = _c === void 0 ? false : _c, _d = _a.enableBorder, enableBorder = _d === void 0 ? false : _d, _e = _a.enableAddToCart, enableAddToCart = _e === void 0 ? false : _e, _f = _a.enableQuickShop, enableQuickShop = _f === void 0 ? false : _f, _g = _a.enableQuantity, enableQuantity = _g === void 0 ? false : _g, _h = _a.enableOkendoStarRating, enableOkendoStarRating = _h === void 0 ? false : _h;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var trackProductsSearched = (0, addons_1.useSegment)().trackProductsSearched;
-    var _j = router.query, pageId = _j.page_id, handle = _j.handle;
+    var _j = (0, navigation_1.useParams)(), pageId = _j.page_id, handle = _j.handle;
     if (handle == 'index' || handle == undefined)
         handle = '';
     var _k = (0, react_1.useState)(handle), query = _k[0], setQuery = _k[1];

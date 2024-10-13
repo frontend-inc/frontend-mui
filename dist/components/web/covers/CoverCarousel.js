@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
@@ -6,9 +7,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
 var hooks_1 = require("../../../hooks");
 var __1 = require("../..");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var CoverCarousel = function (props) {
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var _a = props.editing, editing = _a === void 0 ? false : _a, _b = props.items, items = _b === void 0 ? [] : _b, _c = props.enableOverlay, enableOverlay = _c === void 0 ? false : _c, _d = props.opacity, opacity = _d === void 0 ? 0.5 : _d, _e = props.enableGradient, enableGradient = _e === void 0 ? false : _e, _f = props.enableArrows, enableArrows = _f === void 0 ? false : _f, _g = props.enableAutoPlay, enableAutoPlay = _g === void 0 ? false : _g, _h = props.alignItems, alignItems = _h === void 0 ? 'center' : _h;
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
     var handleClick = function (item) {

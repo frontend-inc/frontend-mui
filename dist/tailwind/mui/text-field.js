@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __rest = (this && this.__rest) || function (s, e) {
     var t = {};

@@ -1,6 +1,6 @@
 import React from 'react';
 import { AdminMenusType } from '../../../types';
-type AdminMenuItemsProps = {
+type AdminMenuProps = {
     menuItems: AdminMenusType;
     activeMenu: string;
     enableEdit?: boolean;
@@ -9,5 +9,5 @@ type AdminMenuItemsProps = {
     handleEdit: (menuItem: any) => void;
     handleDelete: (menuItem: any) => void;
 };
-declare const AdminMenusItems: React.FC<AdminMenuItemsProps>;
-export default AdminMenusItems;
+declare const AdminMenu: React.FC<AdminMenuProps>;
+export default AdminMenu;

@@ -1,3 +1,4 @@
+'use client';
 "use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
@@ -81,11 +82,11 @@ var hooks_1 = require("../../../hooks");
 var AdminCollectionEdit_1 = __importDefault(require("./AdminCollectionEdit"));
 var AdminViewEdit_1 = __importDefault(require("../views/AdminViewEdit"));
 var frontend_js_1 = require("frontend-js");
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var lucide_react_1 = require("lucide-react");
 var AdminCollectionMenu = function () {
-    var router = (0, router_1.useRouter)();
-    var _a = router.query, appId = _a.app_id, viewId = _a.view_id, collectionId = _a.collection_id;
+    var router = (0, navigation_1.useRouter)();
+    var _a = (0, navigation_1.useParams)(), appId = _a.app_id, viewId = _a.view_id, collectionId = _a.collection_id;
     var apiQuery = new frontend_js_1.ApiQuery();
     var _b = (0, react_1.useState)(false), showDeleteModal = _b[0], setShowDeleteModal = _b[1];
     var _c = (0, react_1.useState)(false), showViewModal = _c[0], setShowViewModal = _c[1];

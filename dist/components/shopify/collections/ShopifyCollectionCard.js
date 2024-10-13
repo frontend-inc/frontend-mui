@@ -1,10 +1,11 @@
+'use client';
 "use strict";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = __importDefault(require("react"));
-var router_1 = require("next/router");
+var navigation_1 = require("next/navigation");
 var tailwind_1 = require("../../../tailwind");
 var card_1 = require("../../../shadcn/ui/card");
 var button_1 = require("../../../shadcn/ui/button");
@@ -14,7 +15,7 @@ var components_1 = require("../../../components");
 function ShopifyCollectionCard(_a) {
     var collection = _a.collection, href = _a.href, handleClick = _a.handleClick, buttonText = _a.buttonText, _b = _a.enableGradient, enableGradient = _b === void 0 ? false : _b, _c = _a.enableOverlay, enableOverlay = _c === void 0 ? false : _c;
     var clientUrl = (0, hooks_1.useApp)().clientUrl;
-    var router = (0, router_1.useRouter)();
+    var router = (0, navigation_1.useRouter)();
     var _d = collection || {}, label = _d.label, title = _d.title, image = _d.image;
     var handleItemClick = function () {
         if (handleClick) {
