@@ -1,0 +1,25 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(require("react"));
+var radio_group_1 = require("../../../shadcn/ui/radio-group");
+var label_1 = require("../../../shadcn/ui/label");
+var components_1 = require("../../../components");
+var form_1 = require("../../../shadcn/ui/form");
+var tailwind_1 = require("../../../tailwind");
+function RadioInput(_a) {
+    var label = _a.label, info = _a.info, name = _a.name, value = _a.value, options = _a.options, handleChange = _a.handleChange;
+    return (react_1.default.createElement(form_1.FormControl, { className: "w-full" },
+        react_1.default.createElement(components_1.InputLabel, { label: label, info: info }),
+        react_1.default.createElement(radio_group_1.RadioGroup, { name: name, value: String(value), onValueChange: function (newValue) {
+                return handleChange({
+                    target: { name: name, value: newValue },
+                });
+            }, className: "mt-2" }, options === null || options === void 0 ? void 0 : options.map(function (option, idx) { return (react_1.default.createElement("div", { key: idx, className: "flex items-center space-x-2" },
+            react_1.default.createElement(radio_group_1.RadioGroupItem, { value: String(option.value), id: "".concat(name, "-").concat(option.value) }),
+            react_1.default.createElement(label_1.Label, { htmlFor: "".concat(name, "-").concat(option.value) },
+                react_1.default.createElement(tailwind_1.Typography, { variant: "body2" }, option.label)))); }))));
+}
+exports.default = RadioInput;
